@@ -2,19 +2,24 @@ package com.pfly;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class JdbcTaskDao implements TaskDAO{
 
 	private JdbcTemplate jdbcTemplate;
 	
+	@Autowired
 	public void setDataSource(DataSource dataSource){
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 	
 	@Override
 	public void insert(Task task) {
-		
+		int a = 1;
 	}
 
 	@Override
